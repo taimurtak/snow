@@ -16,6 +16,6 @@ Try running the following commands:
 
 
 source contains source definitions
-`base` contains `ephemeral` base models that serve as wrappers around source models to define column names and data types where necessary
- `ods` represents an Operational Data Store (ODS), i.e. a mostly normalized view of the data. These models may contain more columns than we may choose to publish to the dimensional data warehouse, but don't contain any reporting models.
-- `wh` represents the Dimensional Data Warehouse (WH). These models use a star schema methodology made up of fact (`fct_*`) and dimension (`dim_*`) tables. 
+data contains `ephemeral` base models that serve as wrappers around source models to define column names and data types where necessary
+ staging represents an operational data , i.e. a mostly normalized view of the data.
+tables represent dimensional warehouse.
