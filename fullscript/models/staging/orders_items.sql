@@ -14,6 +14,7 @@ line_items as (
 
 )
 select 
+    {{ dbt_utils.generate_surrogate_key(['o.order_key']) }} as order_item_key,
     o.order_key,
     o.order_date,
     o.customer_key,

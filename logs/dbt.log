@@ -158,3 +158,17 @@ Happy modeling!
 [0m19:50:09.871608 [debug] [MainThread]: Connection 'debug' was properly closed.
 [0m19:50:09.872060 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb9ded2e560>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb9d97ce5c0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb9d97cdc00>]}
 [0m19:50:09.872583 [debug] [MainThread]: Flushing usage events
+[0m08:23:49.584009 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efdb9042500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efdb9874a30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efdb9874a00>]}
+
+
+============================== 08:23:49.587609 | 0ce9c2b5-5ae6-4c7a-bdfb-d2da28f594a3 ==============================
+[0m08:23:49.587609 [info ] [MainThread]: Running with dbt=1.6.2
+[0m08:23:49.588316 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/root/.dbt', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m08:23:49.588924 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /media/tak/DATA/work/snow/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m08:23:49.589702 [debug] [MainThread]: Command `dbt run` failed at 08:23:49.589546 after 0.01 seconds
+[0m08:23:49.590173 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efdb9042500>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efdb98749a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7efdb9874970>]}
+[0m08:23:49.590674 [debug] [MainThread]: Flushing usage events
