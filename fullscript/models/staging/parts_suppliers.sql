@@ -3,7 +3,12 @@
         materialized = 'table'
     )
 }}
-with parts as (
+with part_suppliers as (
+
+    select * from {{ ref('base_part_supplier') }}
+
+),
+parts as (
     
     select * from {{ ref('parts') }}
 
@@ -12,14 +17,9 @@ suppliers as (
 
     select * from {{ ref('suppliers') }}
 
-),
-part_suppliers as (
-
-    select * from {{ ref('base_part_supplier') }}
-
 )
-select 
 
+select 
     {{ dbt_utils.generate_surrogate_key(['s.supplier_key']) }} as part_supplier_key,
     p.part_key,
     p.part_name,
@@ -29,11 +29,9 @@ select
     p.part_size,
     p.part_container_desc,
     p.retail_price,
-
     s.supplier_key,
     s.supplier_name,
     s.nation_key,
-
     ps.supplier_availabe_quantity,
     ps.supplier_cost_amount
 from

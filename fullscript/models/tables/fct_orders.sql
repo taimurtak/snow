@@ -28,7 +28,6 @@ order_item_summary as (
 final as (
 
     select 
-
         o.order_key, 
         o.order_date,
         o.customer_key,
@@ -36,7 +35,6 @@ final as (
         o.order_priority_code,
         o.order_clerk_name,
         o.shipping_priority,
-                
         1 as order_count,                
         s.gross_item_sales_amount,
         s.item_discount_amount,

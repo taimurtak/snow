@@ -1,4 +1,4 @@
-- source contains source definitions
-- data contains `ephemeral` base models that serve as wrappers around source models to define column names and data types where necessary
-- staging represents an operational data , i.e. a mostly normalized view of the data.
-- tables represent dimensional warehouse.
+- "source" contains source definitions for pulling from snowflake example schema
+- "data" contains base models that serve as wrappers around source models to define column names and data types 
+- "staging" contains normalized view of the data.
+- "tables" represent dimensional warehouse.
