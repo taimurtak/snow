@@ -24,32 +24,20 @@ order_item_summary as (
     from orders_items o
     group by
         1
-),
-final as (
-
-    select 
-        o.order_key, 
-        o.order_date,
-        o.customer_key,
-        o.order_status_code,
-        o.order_priority_code,
-        o.order_clerk_name,
-        o.shipping_priority,
-        1 as order_count,                
-        s.gross_item_sales_amount,
-        s.item_discount_amount,
-        s.item_tax_amount,
-        s.net_item_sales_amount
-    from
-        orders o
-        join
-        order_item_summary s
-            on o.order_key = s.order_key
 )
+
+
 select 
-    f.*,
-    {{ dbt_housekeeping() }}
+    o.order_key, 
+    o.order_date,
+    o.customer_key,
+    o.order_status_code,
+    o.order_priority_code,             
+    round(s.gross_item_sales_amount,2) as gross_item_sales_amount,
+    round(s.item_discount_amount,2) as item_discount_amount,
+    round(s.item_tax_amount,2) as item_tax_amount,
+    round(s.net_item_sales_amount,2) as net_item_sales_amount
 from
-    final f
-order by
-    f.order_date
+    orders o
+    join order_item_summary s on o.order_key = s.order_key
+
